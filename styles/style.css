@@ -31,7 +31,6 @@ h2{
 	text-align: center;
 	text-transform: uppercase;
 }
-@media
 /* the inner section is used to make it centered on wide screens*/
 .container{
 	max-width: 940px;
