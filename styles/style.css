@@ -5,6 +5,13 @@
 section, header{
 	min-width: 360px;
 }
+body, html{
+	height:100%;	
+}
+.wrapper{
+	min-height: 100%;
+	position: relative;
+}
 /*button styling*/
 .button{
 	display: block;	
@@ -267,10 +274,10 @@ nav {
 	box-shadow: inset 0 3px 4px rgba(0, 0, 0, 0.15);
 	color: #9799a7;
 }
-form{
+.search-form{
 	display: none;
 }
-#toggle-search:checked ~ form{
+#toggle-search:checked ~ .search-form{
 	display: block;
 	position: absolute;
 	width:100%;
@@ -289,7 +296,7 @@ input[name="q"]{
     width: 100%;
 }
 @media screen and (min-width: 815px){
-	form{
+	.search-form{
 		margin-top: 35px;
 		display:block;
 		position:relative;
@@ -307,7 +314,7 @@ input[name="q"]{
 	}
 }
 @media screen and (min-width: 900px){
-	form{
+	.search-form{
 		width:160px;
 	}
 	input[name='q']{
@@ -357,12 +364,14 @@ input[name="q"]{
 	width:100%;
 	height:300px;
 }
-.highlights-list{
-	width:400%;/*100% per slide*/
-}
 .highlights-carousel{
 	overflow:hidden;
 	width:100%;
+}
+.highlights-list{
+	position: relative;
+	width:100%;
+	height:200px;
 }
 /*switching the background from the crousel only to the whole
 highlights section*/
@@ -385,8 +394,14 @@ highlights section*/
 	}
 }
 .highlight{
-	width:25%;
-	float:left;
+	width:100%;
+	position:absolute;
+	top:0;
+	left:0;
+	display: none;
+}
+.highlight:target{
+	display: block;
 }
 .highlight-inner{
 	background-color:rgba(29,127,189,0.8);
@@ -540,6 +555,9 @@ highlights section*/
 /******************************/
 .solutions{
 	background-color: rgb(47,142,190);
+	background-image:url('../img/weDoBG.png');
+	background-size: 3px;
+	background-repeat: repeat;
 	width:100%;
 	height:300px;
 	overflow:hidden;
@@ -657,7 +675,7 @@ highlights section*/
 @media screen and (min-width: 760px){
 	.happening{
 		background-attachment: fixed;
-		background-size:4500px 900px;
+		background-size:5000px 1100px;
 		height:300px; 
 		background-position-x: 65%
 	}
@@ -927,4 +945,200 @@ highlights section*/
 	.stories-group:last-child .small-story{
 		width:222px;
 	}
+}
+/*************************************/
+/******** Footer Styling ************/
+/*************************************/
+footer{
+	background-color: #000000;
+	background-image: url('../img/weDoBG.png');
+	background-repeat: repeat;
+	background-size: 3px;
+	position:absolute;
+	bottom:0;
+	width:100%;
+	height:122px;
+}
+.wrapper:nth-last-child(2){
+	padding-bottom: 122px; /*according to the footer height*/
+}
+.mobile-footer > p{
+	background-color: #ffffff;
+}
+.mobile-footer > p > a{
+	text-decoration: none;
+	color:#000000;
+}
+footer .container{
+	display: none;
+}
+.mobile-footer{
+	display: block;
+	width:100%;
+}
+.footer-header{
+	line-height: 1.6rem;
+	font-size: 1.2rem;
+	text-transform: uppercase;
+	color:#ffffff;
+	font-family: 'Roboto Condensed', sans-serif;
+	padding: 4px 10px;
+    display: block;
+    border-bottom: 2px solid #000000;
+}
+.footer-header > a{
+	text-decoration: none;
+	color: inherit;
+}
+.social-links, .social-links li{
+	display: inline-block;
+	height:1.6rem;
+	vertical-align: middle;
+}
+.social-links li a:before{
+	padding-left: 6px;
+}
+.linkdin:before{
+	content:url('../img/socialMenuIcon-linkdin.png');
+}
+.tweeter:before{
+	content:url('../img/socialMenuIcon-twitter.png');
+}
+.youtube:before{
+	content:url('../img/socialMenuIcon-youtube.png');
+}
+.linkdin:hover:before{
+	content:url('../img/socialMenuIcon-linkdin_hover.png');
+}
+.tweeter:hover:before{
+	content:url('../img/socialMenuIcon-twitter_hover.png');
+}
+.youtube:hover:before{
+	content:url('../img/socialMenuIcon-youtube_hover.png');
+}
+@media screen and (min-width: 760px){
+	footer{
+		height:260px;
+	}
+	.wrapper:nth-last-child(2){
+		padding-bottom: 260px; /*according to the footer height*/
+	}
+	.mobile-footer{
+		display: none;
+	}
+	footer .container{
+		display: block;
+	}
+	.footer-left{
+		padding:10px 0 10px 10px;
+		width:70%;
+		float:left;
+	}
+	.footer-right{
+		width:30%;
+		float:right;
+	}
+	.footer-left-col{
+		display: inline-block;
+		width:30%;
+		margin-right: 5%;
+		vertical-align: top;
+	}
+	.footer-left-col:last-child{
+		margin-right: 0;
+	}
+	footer h4{
+		font-size:1rem;
+		text-transform: uppercase;
+		color:#ffffff;
+		padding-bottom: 6px;
+		font-family: 'Roboto Condensed', sans-serif; 
+	}
+	.footer-menu-item{
+		color:#ffffff;
+		font-size: 0.8rem;
+		font-family: 'Roboto Condensed', sans-serif;
+		padding-bottom: 4px;
+	}
+	.footer-left p, .social-links{
+		position: absolute;
+		bottom:10px;
+		color:rgb(97,97,97);
+	}
+	.footer-left a{
+		text-decoration: none;
+	}
+	.footer-left p a{
+		color:inherit;
+	}
+	.footer-right{
+		background-color: rgba(150,150,150,0.6);
+		height:100%;
+	}
+	.footer-right div{
+		width:94%;
+		margin: 0 auto;
+	}
+	.footer-right h5{
+		color: rgb(48,151,253);
+		font-size:1.2rem;
+		font-weight: bold;
+		font-family: 'Roboto Condensed', sans-serif;
+		text-transform: uppercase;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		text-align: center;
+	}
+	.footer-right time, .footer-right p{
+		display: inline-block;
+	}
+	.footer-right time{
+		width:30%;
+		text-align: center;
+		color:#ffffff;
+		font-family: 'Roboto Condensed', sans-serif;
+	}
+	.footer-right p{
+		width:70%;
+		color:#ffffff;
+		font-family: 'Roboto Condensed', sans-serif;
+	}
+	.footer-right .day{
+		font-size: 1.8rem;
+	}
+	.footer-right .month{
+		font-size: 1.6rem;
+	}
+	.footer-right > div:first-child{
+		padding-bottom: 10px;
+		border-bottom: 1px solid rgba(60,60,60,0.8);
+	}
+	.subscribe-form input{
+		border-bottom-left-radius:3px;
+		border-top-left-radius:3px;
+		border-color: transparent;
+		line-height: 1.4rem; 
+		width:66%;
+	}
+	.subscribe-form button{
+		background-color: rgb(48,151,253);
+		text-decoration: none;
+		color:#ffffff;
+		border-top-right-radius: 3px;
+		border-bottom-right-radius:3px;
+		border-color: transparent;
+		line-height: 1.5rem;
+		padding: 0 6px;
+		width:34%;
+	}
+}
+.under-construction{
+	position:relative;
+	height:20rem;
+}
+.under-construction img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
 }

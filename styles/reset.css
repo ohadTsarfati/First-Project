@@ -41,7 +41,7 @@ html {
 *:after {
   box-sizing: inherit;
 }
-
+/*setting clearfix for elements containig only floating elements*/
 .clearfix:after{
 	content: '';
 	display: table;
